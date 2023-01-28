@@ -32,7 +32,6 @@ export default function Body() {
       setschedulestatePM(newList);
     }
   };
-
   return (
     <div className="flex place-content-evenly h-full">
       <Clock
