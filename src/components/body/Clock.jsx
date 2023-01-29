@@ -11,6 +11,7 @@ export default function Clock({
   minuitRef,
 }) {
   const hour = [
+    "00",
     "01",
     "02",
     "03",
@@ -22,7 +23,6 @@ export default function Clock({
     "09",
     "10",
     "11",
-    "12",
   ];
   const minuit = [
     "00",
@@ -141,7 +141,7 @@ export default function Clock({
         <div className="text-center">
           {ampm.map((value, i) => (
             <button
-              className="m-4  bg-white text-lg rounded-full w-12 h-12 text-center border-solid border-cyan-900 border-5"
+              className="m-2  bg-white text-lg rounded-full w-12 h-12 text-center border-solid border-cyan-900 border-5"
               onClick={handleOnClickampm}
               key={indexOfampm}
               ref={ampmRef.current[i]}
@@ -157,7 +157,7 @@ export default function Clock({
         <div className="columns-1 text-center">
           {hour.map((value, i) => (
             <button
-              className="m-4  bg-white text-lg rounded-full w-12 h-12 text-center border-solid border-gray-600 border-5"
+              className="mr-4 ml-4 mb-2  mt-2 bg-white text-lg rounded-full w-12 h-12 text-center border-solid border-gray-600 border-5"
               onClick={handleOnClickhour}
               key={indexOfHour}
               ref={hourRef.current[i]}
@@ -172,7 +172,7 @@ export default function Clock({
         <div className="columns-1 text-center">
           {minuit.map((value, i) => (
             <button
-              className="m-4  bg-white text-lg rounded-full w-12 h-12 text-center"
+              className="mr-4 ml-4 mb-2 mt-2  bg-white text-lg rounded-full w-12 h-12 text-center"
               key={indexOfMinuit}
               ref={minuitRef.current[i]}
               onClick={handleOnClickminuit}

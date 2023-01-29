@@ -20,19 +20,32 @@ export default function Items({
 }) {
   const items = [
     "🌞起きる",
-    "🍽️食事",
+    "💻仕事",
     "🛁風呂",
     "🛌寝る",
-    "💻仕事",
+    "🍳朝食",
+    "🍔昼食",
+    "🍕夕食",
+    "🍽️食事",
     "🏠家事",
+    "🔪料理",
+    "🧹掃除",
+    "🗃️整理",
     "🚶外出",
     "🍹外食",
     "😀レジャー",
+    "🚩帰宅",
     "👪家族",
     "🥰交友",
     "🤝出会い",
-    "🤸‍♀️運動",
+    "🫖お茶",
+    "💪筋トレ",
+    "🤸柔軟",
+    "🧘瞑想",
+    "🏃運動",
     "🖊️勉強",
+    "📚読書",
+    "🎈発信",
     "🤍その他",
   ];
   let indexOfItems = 200;
@@ -117,7 +130,7 @@ export default function Items({
         <label className=" font-sans ml-4 ">
           About Plan
           <input
-            className=" font-sans ml-5 mr-5  rounded-md place-items-center"
+            className=" font-sans ml-5 mr-5  rounded-md place-items-center w-1/2"
             autoFocus
             type="text"
             onChange={handleChange}
@@ -130,7 +143,7 @@ export default function Items({
       <div className="columns-1 text-center">
         {items.map((value) => (
           <button
-            className="m-5  bg-slate-100 text-xl rounded-full w-24 h-20 text-center font-semibold"
+            className="mr-2 ml-2 mt-3 mb-3  bg-slate-100 text-base rounded-full w-20 h-12 text-center font-semibold"
             key={indexOfItems}
             onClick={handleOnClickplan}
           >
