@@ -27,7 +27,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="w-full h-20 flex items-center top-0 left-0 bg-slate-500 p-10 bg-opacity-75">
+    <div className="w-full h-20 flex items-center text-center top-0 left-0 bg-slate-500 p-10 bg-opacity-75">
       <h1 className="ml-0 drop-shadow-lg text-4xl font-sans text-white font-bold">
         My Schedule
       </h1>
@@ -35,9 +35,8 @@ export const Header = () => {
         {" "}
         {getDate()}
       </h2>
-      <h3 className=" ml-10  text-white">
-        ①AM,PMを選択　②Hourを選択　③Minuitを選択　④Planを選択（追記がある時はPlanボタンを押す前にAbout
-        Planに入力する）⑤Scheduleを消すときは文字をクリック
+      <h3 className="text-center text-basic font-sans text-white ml-10 ">
+        ①AM/PM,Hour,Minuit,Planを選択　※追記がある時はPlanボタンを押す前にAboutPlanに入力　②テキストをコピペして適宜貼り付け
       </h3>
     </div>
   );
