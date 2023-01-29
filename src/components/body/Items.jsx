@@ -84,7 +84,6 @@ export default function Items({
       }
       doOfBox.ampmvalue = ampmstate;
     }
-    console.log(doOfBox.num);
     if (hourstate === "") {
       alert("hourを選択してください");
     } else {
