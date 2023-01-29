@@ -39,13 +39,17 @@ export default function Items({
     "🥰交友",
     "🤝出会い",
     "🎈発信",
+    "🚸お迎え",
+    "📝学び",
+    "🎵遊ぶ",
+    "🧒ケア",
     "💪筋トレ",
     "🤸柔軟",
     "🧘瞑想",
     "🏃運動",
     "🖊️勉強",
     "📚読書",
-    "💫創作",
+    "🎨創作",
     "🤍その他",
   ];
   let indexOfItems = 200;
@@ -123,13 +127,13 @@ export default function Items({
     }
   };
   return (
-    <div className="mt-5 w-1/4 h-full bg-slate-300 ml-5 mr-5 border-none rounded-md items-center ">
+    <div className="mt-5 w-1/3 h-full bg-slate-300 ml-5 mr-5 border-none rounded-md items-center ">
       <h3 className="text-center text-xl font-black">Plan</h3>
       <div className="flex text-center">
-        <label className=" font-sans ml-4 ">
+        <label className=" font-sans ml-12 ">
           About Plan
           <input
-            className=" font-sans ml-5 mr-5  rounded-md place-items-center w-1/2"
+            className=" font-sans ml-8 mr-5  mb-2 mt-2 rounded-md place-items-center w-4/6"
             autoFocus
             type="text"
             onChange={handleChange}
@@ -142,7 +146,7 @@ export default function Items({
       <div className="columns-1 text-center">
         {items.map((value) => (
           <button
-            className="mr-2 ml-2 mt-3 mb-3  bg-slate-100 text-base rounded-full w-20 h-12 text-center font-semibold"
+            className="mr-3 ml-3 mt-2 mb-2  bg-slate-100 text-base rounded-full w-20 h-12 text-center font-semibold"
             key={indexOfItems}
             onClick={handleOnClickplan}
           >
