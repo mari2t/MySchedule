@@ -9,9 +9,9 @@
 
 　同じようなことを毎回書くのが面倒だったので効率化のため作成しました。
  
-・TailwindCSSの習得
+・TailwindCSSの勉強
 
-・useState,useRefの習得
+・useState,useRefの勉強
 
 
 ---How to use---
