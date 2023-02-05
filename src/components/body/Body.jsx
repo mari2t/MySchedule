@@ -11,8 +11,11 @@ export default function Body() {
   const [schedulestateAM, setschedulestateAM] = useState([]);
   const [schedulestatePM, setschedulestatePM] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [twentyForState, setTwentyForState] = useState(false);
   const ampmRef = useRef([]);
+  const noHourRef = useRef([]);
   const hourRef = useRef([]);
+  const noMinuitRef = useRef([]);
   const minuitRef = useRef([]);
 
   const deleteDo = (id) => {
@@ -32,16 +35,27 @@ export default function Body() {
       setschedulestatePM(newList);
     }
   };
+
   return (
-    <div className="flex place-content-evenly h-full">
+    <div className="flex place-content-evenly h-full font-sans">
       <Clock
         ampmstate={ampmstate}
         setampmstate={setampmstate}
         sethourstate={sethourstate}
+        minuitstate={minuitstate}
         setminuitstate={setminuitstate}
+        schedulestateAM={schedulestateAM}
+        setschedulestateAM={setschedulestateAM}
+        schedulestatePM={schedulestatePM}
+        setschedulestatePM={setschedulestatePM}
+        twentyForState={twentyForState}
+        setTwentyForState={setTwentyForState}
         ampmRef={ampmRef}
+        noHourRef={noHourRef}
         hourRef={hourRef}
+        noMinuitRef={noMinuitRef}
         minuitRef={minuitRef}
+        setInputValue={setInputValue}
       />
       <Items
         planstate={planstate}
@@ -58,6 +72,7 @@ export default function Body() {
         setschedulestatePM={setschedulestatePM}
         inputValue={inputValue}
         setInputValue={setInputValue}
+        twentyForState={twentyForState}
         ampmRef={ampmRef}
         hourRef={hourRef}
         minuitRef={minuitRef}

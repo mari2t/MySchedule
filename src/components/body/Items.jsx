@@ -12,8 +12,9 @@ export default function Items({
   setschedulestateAM,
   schedulestatePM,
   setschedulestatePM,
-  setInputValue,
   inputValue,
+  setInputValue,
+  twentyForState,
   ampmRef,
   hourRef,
   minuitRef,
@@ -64,19 +65,32 @@ export default function Items({
     ];
     return value;
   };
-
   //About Planボタンクリック
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
-
   //Planボタンクリック
   const handleOnClickplan = (e) => {
-    let space = "　　　";
     let doOfBox = {};
+    let temphour = "";
+    let tempminuit = "";
     let plan = e.target.innerText;
+    let tempTopTow = "";
     doOfBox.id = uuid();
-    doOfBox.num = Number(hourstate) * 100 + Number(minuitstate);
+    doOfBox.plan = e.target.innerText;
+    //並び変え用のhourを設定
+    if (Number(hourstate) >= 0 && Number(hourstate) <= 12) {
+      temphour = Number(hourstate + 1);
+    } else {
+      temphour = 0;
+    }
+    //並び変え用のminuitを設定
+    if (Number(minuitstate) >= 0 && Number(minuitstate) <= 55) {
+      tempminuit = Number(minuitstate + 1);
+    } else {
+      tempminuit = 0;
+    }
+    doOfBox.num = temphour * 100 + tempminuit;
     //時刻が選択されていない場合のアラート
     if (ampmstate === "") {
       alert("am/pmを選択してください");
@@ -109,6 +123,7 @@ export default function Items({
       else {
         doOfBox.value = hourstate + ":" + minuitstate + " " + plan;
       }
+      //AM配列、PM配列に入れる
       if (ampmstate === "am") {
         doOfBox = [...schedulestateAM, doOfBox];
         doOfBox = doOfBox.sort(function (a, b) {
@@ -117,12 +132,28 @@ export default function Items({
         setschedulestateAM(doOfBox);
       } else {
         doOfBox = [...schedulestatePM, doOfBox];
+        //24時間表記の分岐
+        if (twentyForState === true) {
+          doOfBox.map(function (object, i) {
+            if (object.hourstatevalue === "--") {
+              tempTopTow = object.hourstatevalue;
+            } else {
+              tempTopTow = String(Number(object.hourstatevalue) + 12);
+            }
+            object.value = tempTopTow + object.value.substring(2);
+          });
+        } else {
+          doOfBox.map(function (object, i) {
+            tempTopTow = object.hourstatevalue;
+            object.value = tempTopTow + object.value.substring(2);
+          });
+        }
         doOfBox = doOfBox.sort(function (a, b) {
           return a.num < b.num ? -1 : 1;
         });
         setschedulestatePM(doOfBox);
       }
-
+      console.log("end of items", twentyForState);
       setInputValue("");
     }
   };
@@ -146,7 +177,7 @@ export default function Items({
       <div className="columns-1 text-center">
         {items.map((value) => (
           <button
-            className="mr-3 ml-3 mt-2 mb-2  bg-slate-100 text-base rounded-full w-20 h-12 text-center font-semibold"
+            className="mr-3 ml-3 mt-2 mb-2  bg-slate-100 text-base rounded-full w-20 h-12 text-center font-semibold hover:bg-slate-400"
             key={indexOfItems}
             onClick={handleOnClickplan}
           >
