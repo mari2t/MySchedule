@@ -52,7 +52,6 @@ export default function Items({
     "📚読書",
     "🎨創作",
     "🤍その他",
-    "test",
   ];
   let indexOfItems = 200;
   let itemsOfBox = [];
