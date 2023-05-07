@@ -1,37 +1,25 @@
 # MySchedule
-電卓型スケジューラーです🖊️レスポンシブは工事中🚨
 
----作成目的---
+## Description
 
-・テキスト貼り付け作業の効率化
+電卓型スケジューラーです。  
+It is a calculator-like scheduler.
 
-→OneNoteに１日のスケジュールを毎日書いているのですが、
+## Example
 
-　同じようなことを毎回書くのが面倒だったので効率化のため作成しました。
- 
-・TailwindCSSの勉強
+## ![example.png](/public/img/example.png "example.png")
 
-・useState,useRefの勉強
+## Technical Objectives
 
+・React の学習  
+・Tailwind CSS の学習  
+・スケジュールの効率化
 
----How to use---
+## Next
 
-①AM/PMを選択
+・レスポンシブ対応  
+・終日ボタンの追加
 
-24時間表記にしたいときは「24時間表記」をクリック
+## Creation Date
 
-②Hourを選択
-
-時間を指定しないときは「時間未定」をクリック
-
-③Minuitを選択
-
-分を指定しないときは「分未定」をクリック
-
-④Planを選択
-
-　※追記がある時はPlanボタンを選択前にAboutPlanに入力
- 
-⑤Schduleをコピペして適宜貼り付け
-
-⑥Scheduleの一部をキャンセルしたいときは文字をクリック
+2023/1/29
